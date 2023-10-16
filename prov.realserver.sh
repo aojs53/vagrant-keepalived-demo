@@ -35,7 +35,7 @@ WantedBy=multi-user.target
 EOF
 
 systemctl daemon-reload
-systemctl start lvs-arpfilter
+systemctl enable lvs-arpfilter --now
 
 
 ## setup firewalld. need to be accessed by ftp.
@@ -47,9 +47,13 @@ firewall-cmd --zone=public --add-port 512-1024/udp
 firewall-cmd --runtime-to-permanent
 
 
+## setup /etc/hosts
+mount /vagrant
+cat /vagrant/hosts.vagrant >> /etc/hosts
 
 ## set vip and enable on boot.
 echo ip addr add $VIP dev $NIC >> /etc/rc.local
+chmod 755 /etc/rc.local
 ip addr add $VIP dev $NIC
 
 ## ftp test marker. 

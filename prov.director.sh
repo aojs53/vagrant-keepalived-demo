@@ -9,10 +9,10 @@ sed -ie 's/^SELINUX=.*$/SELINUX=disabled/g' /etc/selinux/config
 sysctl -w net.ipv4.ip_forward=1 > /etc/sysctl.d/90-lvs.conf
 
 ## prerquired packages
-dnf install -y keepalived ipvsadm mailx mutt postfix
+dnf install -y keepalived ipvsadm mailx mutt postfix tcpdump
 
 ## startup postfix
-systemctl enable postifx --now
+systemctl enable postfix --now
 
 ## setup keepalived
 mount /vagrant

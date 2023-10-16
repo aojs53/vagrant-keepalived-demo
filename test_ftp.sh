@@ -1,7 +1,12 @@
 cd /dev/shm
 
+if [ "$1" != "" ];
+then
+  debug="debug; "
+fi
+
 echo 'PASV connection'
-lftp -c 'open -u vagrant,vagrant lvs; ls -l; mget hello.*;'
+lftp -c "$debug; open -u vagrant,vagrant lvs; ls; mget hello.*;"
 ls -l hello.*
 rm hello.*
 

@@ -81,25 +81,30 @@ Vagrant.configure("2") do |config|
     server.vm.box = "almalinux/8"
     server.vm.network "private_network", ip: "192.168.56.11"
     server.vm.hostname = "lvs1"
+    server.vm.provision "shell", path: "prov.director.sh"
   end
   config.vm.define "lvs2" do |server|
     server.vm.box = "almalinux/8"
     server.vm.network "private_network", ip: "192.168.56.12"
     server.vm.hostname = "lvs2"
+    server.vm.provision "shell", path: "prov.director.sh"
   end
   config.vm.define "s1" do |server|
     server.vm.box = "almalinux/8"
     server.vm.network "private_network", ip: "192.168.56.101"
     server.vm.hostname = "s1"
+    server.vm.provision "shell", path: "prov.realserver.sh"
   end
   config.vm.define "s2" do |server|
     server.vm.box = "almalinux/8"
     server.vm.network "private_network", ip: "192.168.56.102"
     server.vm.hostname = "s2"
+    server.vm.provision "shell", path: "prov.realserver.sh"
   end
   config.vm.define "cl" do |server|
     server.vm.box = "almalinux/8"
     server.vm.network "private_network", ip: "192.168.56.200"
     server.vm.hostname = "cl"
+    server.vm.provision "shell", path: "prov.client.sh"
   end
 end
