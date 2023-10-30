@@ -7,6 +7,7 @@ This is a demo environment to demonstrate to distribute ssh and ftp access by ke
 There are 5 servers in this environment.
 
 | Role           | hostname | comment                          |
+| -------------  | -------- | -------------------------------- |
 | VIP            | lvs      | IP address handled by keepalived |
 | lvs #1         | lvs1     | primary keepalived server        |
 | lvs #2         | lvs2     | secondary keepalived  server     |
