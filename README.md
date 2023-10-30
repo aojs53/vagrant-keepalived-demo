@@ -45,13 +45,14 @@ your pc $ vagrant ssh cl
 
 #### preparation
 
-````
+```
 vagrant@cl $ sudo mount /vagrant
 vagrant@cl $ cd /vagrant
 ```
 
 #### Test ssh access
 
+```
 vagrant@cl $ ./test_ssh.sh
 ```
 
