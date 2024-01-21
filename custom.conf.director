@@ -1,0 +1,2 @@
+[Service]
+ExecStartPost=/usr/local/libexec/patch_to_nft_ruleset.sh

@@ -38,6 +38,15 @@ firewall-cmd --zone public --add-port 0-65535/tcp
 firewall-cmd --zone public --add-rich-rule='rule protocol value=vrrp accept'
 firewall-cmd --runtime-to-permanent
 
+DIRS=("/etc/systemd/system/firewalld.service.d" "/usr/local/libexec")
+for d in "${DIRS[@]}";
+do
+  if [ ! -d $d ]; then mkdir -p $d; fi
+done
+cp -p /vagrant/custom.conf.director /etc/systemd/system/firewalld.service.d/custom.conf
+cp -p /vagrant/patch_to_nft_ruleset.sh /usr/local/libexec/patch_to_nft_ruleset.sh
+systemctl daemon-reload
+systemctl restart firewalld
 
 ## tweak /etc/hosts
 cat /vagrant/hosts.vagrant >> /etc/hosts

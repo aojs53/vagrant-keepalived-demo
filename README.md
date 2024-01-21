@@ -65,9 +65,8 @@ You will be able to observe ssh access are distibuted to s1 and s2.
 vagrant@cl $ ./test_ftp.sh
 ```
 
-This script tests both ACTIVE mode and PASSIVE mode.
-Only PASSIVE mode test will success.
-And ftp access will not be distributed accross the two servers,
+This script tests upload and download by both ACTIVE mode and PASSIVE mode.
+Thease ftp access will not be distributed accross the two servers,
 but wll be continue to access one server.
 These are normal operation.
 (Another client will access to another server.)

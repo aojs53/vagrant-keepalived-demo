@@ -56,6 +56,6 @@ echo ip addr add $VIP dev $NIC >> /etc/rc.local
 chmod 755 /etc/rc.local
 ip addr add $VIP dev $NIC
 
-## ftp test marker. 
-sudo -u vagrant touch /home/vagrant/hello.$(hostname)
+## ftp test file.
+sudo -u vagrant dd if=/dev/zero of=/home/vagrant/10M.$(hostname) bs=1M count=10
 
