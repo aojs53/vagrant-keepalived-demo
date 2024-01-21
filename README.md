@@ -21,7 +21,7 @@ There are 5 servers in this environment.
 ### clone this repo
 
 ```
-$ https://github.com/aojs53/vagrant-keepalived-demo.git 
+$ git clone https://github.com/aojs53/vagrant-keepalived-demo.git 
 
 $ cd vagrant-keepalived-demo
 ```
